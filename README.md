@@ -26,7 +26,7 @@ ones. Hint- Try recursion, or just read below.
        
        // move disks from pegThree to pegTwo
        moveDisks(disks-1, pegThree, pegTwo, pegOne);
-     } // End method mmoveDisks 
+     } // End method moveDisks 
      /**
      * @param args the command line arguments
      */
