@@ -1,0 +1,35 @@
+ * author jqguess
+ * https://github.com/jqguess
+ */
+package taxcalculator;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class TaxCalculator {
+
+    // start main method
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in); // new scanner object
+        //local variables 
+        float cost = 0;
+        float tax = 0;
+        float totalCost;
+        do {
+           try {
+                System.out.print("Enter the cost in dollars, it can't be negative: ");
+                cost = input.nextFloat();
+                System.out.print("Enter the tax as a percentage, it can't be negative: ");
+                tax = input.nextFloat();
+            } catch (InputMismatchException ex) {
+                System.err.println("InputMismatchException: " + ex.getMessage());
+            } // end catch
+        } while ((cost < 0) && (tax < 0));
+
+        tax = 1 + (tax / 100);
+        totalCost = tax * cost;
+        System.out.printf("Your cost after tax is $%.2f", totalCost);
+
+    } // end main method
+} // end class taxcalculator
